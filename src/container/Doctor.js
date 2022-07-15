@@ -14,12 +14,12 @@ import IconButton from '@mui/material/IconButton';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CreateIcon from '@mui/icons-material/Create';
 import { useDispatch, useSelector } from 'react-redux';
-import { addmedicinedata, Deletemedicine, updatemedicine, getMedicines } from '../Redux/Action/medicine.action';
 import { DialogContentText } from '@mui/material';
+import { adddoctordata, Deletedoctor, getDoctor, updatedoctor } from '../Redux/Action/doctor.action';
 
 
 
-export default function Medicine() {
+export default function Doctor() {
   const [open, setOpen] = useState(false);
   const [data, setData] = useState([])
   const [Update, setUpdate] = useState('')
@@ -30,8 +30,8 @@ export default function Medicine() {
   const dispatch = useDispatch()
 
   const count = useSelector(state => state.counter)
-  const medicines = useSelector(state => state.Medicinesdata)
-  console.log(medicines.isLoading);
+  const doctors = useSelector(state => state.doctordata)
+  console.log(doctors.isLoading);
 
 
 
@@ -95,7 +95,7 @@ export default function Medicine() {
     // localStorage.setItem("medicine", JSON.stringify(udata))
 
     console.log(value);
-    dispatch(updatemedicine(value))
+    dispatch(updatedoctor(value))
     setOpen(false)
     setUpdate()
     loadData()
@@ -111,7 +111,7 @@ export default function Medicine() {
 
     console.log(udata);
 
-    dispatch(addmedicinedata(udata))
+    dispatch(adddoctordata(udata))
 
 
     // if (localdata === null) {
@@ -127,21 +127,21 @@ export default function Medicine() {
   }
 
   const loadData = () => {
-    setData(medicines.medicine)
+    setData(doctors.doctor)
   }
 
   useEffect(
     () => {
       loadData()
-      dispatch(getMedicines())
+      dispatch(getDoctor())
     },
     [])
 
-  // useEffect(
-  //   () => {
-  //     loadData()
-  //   },
-  //   [medicine.isLoading])
+  useEffect(
+    () => {
+      loadData()
+    },
+    [doctors.isLoading])
 
 
 
@@ -192,7 +192,7 @@ export default function Medicine() {
     // let localData = JSON.parse(localStorage.getItem('medicine'));
     // let filterData = localData.filter((v, i) => v.id !== id);
     // localStorage.setItem("medicine", JSON.stringify(filterData))
-    dispatch(Deletemedicine(did))
+    dispatch(Deletedoctor(did))
     loadData()
     setDopen(false);
     console.log(id);
@@ -201,7 +201,7 @@ export default function Medicine() {
   const handleSearch = (val) => {
     // let localdata = JSON.parse(localStorage.getItem("users"))
 
-    let fdata = medicines.medicine.filter((d) => (
+    let fdata = doctors.doctor.filter((d) => (
       d.id.toString().includes(val) ||
       d.name.toString().toLowerCase().includes(val.toLowerCase()) ||
       d.price.toLowerCase().includes(val.toLowerCase()) ||
@@ -219,16 +219,16 @@ export default function Medicine() {
   let filterData = filter.length > 0 ? filter : data
   console.log(filterData);
 
-  console.log(medicines.errors);
+  console.log(doctors.errors);
 
   return (
     <>
       {
-        medicines.isLoading ?
+        doctors.isLoading ?
           <p>Loading...</p> :
-          (medicines.errors ?
+          (doctors.errors ?
 
-            <p>{medicines.errors}</p> :
+            <p>{doctors.errors}</p> :
 
             <Box>
               <Container>
@@ -254,7 +254,7 @@ export default function Medicine() {
                   </div>
                   <div style={{ height: 400, width: '100%' }}>
                     <DataGrid
-                      rows={filterData}
+                      rows={doctors.doctor}
                       columns={columns}
                       pageSize={5}
                       rowsPerPageOptions={[5]}

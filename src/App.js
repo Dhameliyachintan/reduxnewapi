@@ -6,7 +6,7 @@ import MiniDrawer from './componente/Layout';
 import { Route } from 'react-router-dom';
 import Counter from './componente/Counter/Counter';
 import { Switch } from 'react-router-dom';
-import Medicine from './container/Medicine';
+import Doctor from './container/Doctor';
 import { PersistGate } from 'redux-persist/integration/react'
 
 
@@ -21,7 +21,7 @@ function App() {
       <PersistGate loading={null} persistor={persistor}>
         <MiniDrawer>
           <Switch>
-            <Route exact to path={"/Medicine"} component={Medicine} />
+            <Route exact to path={"/Doctor"} component={Doctor} />
             <Route exact to path={"/Counter"} component={Counter} />
           </Switch>
         </MiniDrawer>

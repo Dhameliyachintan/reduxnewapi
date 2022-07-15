@@ -2,25 +2,25 @@ import * as ActionType from "../ActionType"
 
 const initialState = {
     isLoading: false,
-    medicine: [],
+    doctor: [],
     errors: ''
 }
 
-export const medicinereducer = (state = initialState, action) => {
+export const doctorreducer = (state = initialState, action) => {
     console.log(action.type, action.payload, state);
     switch (action.type) {
-        case ActionType.REMOVE_MEDICINES:
+        case ActionType.REMOVE_DOCTOR:
             return {
                 ...state,
                 isLoading: false,
-                medicine: state.medicine.filter((d, i) => d.id !== action.payload),
+                doctor: state.doctor.filter((d, i) => d.id !== action.payload),
                 errors: ''
             };
-        case ActionType.UPDATAS_MEDICINES:
+        case ActionType.UPDATAS_DOCTOR:
             return {
                 ...state,
                 isLoading: false,
-                medicine: state.medicine.map((d) => {
+                doctor: state.doctor.map((d) => {
                     if (d.id === action.payload.id) {
                         return action.payload
                     } else {
@@ -29,32 +29,32 @@ export const medicinereducer = (state = initialState, action) => {
                 }),
                 errors: ''
             };
-        case ActionType.LOADING_MEDICINES:
+        case ActionType.LOADING_DOCTOR:
             return {
                 ...state,
                 isLoading: true,
                 errors: ''
             }
-        case ActionType.GET_MEDICINES:
+        case ActionType.GET_DOCTOR:
             return {
                 ...state,
                 isLoading: false,
-                medicine: action.payload,
+                doctor: action.payload,
                 errors: ''
             }
-        case ActionType.ADD_MEDICINES:
+        case ActionType.ADD_DOCTOR:
             return {
                 ...state,
                 isLoading: false,
-                medicine: state.medicine.concat(action.payload),
+                doctor: state.doctor.concat(action.payload),
                 errors: ''
             }
 
-        case ActionType.MEDICINES_ERROES:
+        case ActionType.DOCTOR_ERROES:
             return {
                 ...state,
                 isLoading: false,
-                medicine: [],
+                doctor: [],
                 errors: action.payload
             }
         default:

@@ -101,7 +101,6 @@ export default function MiniDrawer({children}) {
   };
 
   const items = [
-    {label : 'Medicine' , icon: <AddIcCallIcon/>, to: "/Medicine" },
     {label : 'Counter' , icon: <AddIcCallIcon/>, to: "/Counter" },
     {label : 'Doctor' , icon: <AddIcCallIcon/>, to: "/Doctor" },
   ]
