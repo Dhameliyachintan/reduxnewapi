@@ -11,32 +11,23 @@
     {
       "id": 679,
       "name": "chintan",
-      "price": "23",
-      "quantity": "100",
-      "expiry": "2022",
-      "data": "22-05-2015"
+      "price": "231",
+      "quantity": "1001",
+      "expiry": "2022"
     },
     {
-      "id": 458,
+      "id": 922,
+      "name": "chintan",
+      "price": "23",
+      "quantity": "100",
+      "expiry": "20221"
+    },
+    {
+      "id": 433,
       "name": "amit1",
-      "price": "23",
-      "quantity": "32",
-      "expiry": "2024",
-      "data": "22-05-2015"
-    },
-    {
-      "id": 936,
-      "name": "chintan",
-      "price": "23",
-      "quantity": "100",
-      "expiry": "2022"
-    },
-    {
-      "id": 719,
-      "name": "chintan",
-      "price": "23",
-      "quantity": "32",
-      "expiry": "2022"
+      "price": "201",
+      "quantity": "500",
+      "expiry": "202211"
     }
   ],
   "comments": [

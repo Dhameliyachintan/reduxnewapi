@@ -137,11 +137,11 @@ export default function Doctor() {
     },
     [])
 
-  useEffect(
-    () => {
-      loadData()
-    },
-    [doctors.isLoading])
+  // useEffect(
+  //   () => {
+  //     loadData()
+  //   },
+  //   [doctors.isLoading])
 
 
 
