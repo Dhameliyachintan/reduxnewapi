@@ -9,25 +9,11 @@
       "data": "22-05-2015"
     },
     {
-      "id": 679,
-      "name": "chintan",
-      "price": "231",
-      "quantity": "1001",
-      "expiry": "2022"
-    },
-    {
       "id": 922,
       "name": "chintan",
       "price": "23",
       "quantity": "100",
       "expiry": "20221"
-    },
-    {
-      "id": 433,
-      "name": "amit1",
-      "price": "201",
-      "quantity": "500",
-      "expiry": "202211"
     }
   ],
   "comments": [

@@ -22,6 +22,7 @@ export const getRequest = (path) => {
     })
 }
 
+
 export const postRequest = (path, data) => {
     return sendRequest({
         url: path,
@@ -37,7 +38,9 @@ export const deleteRequest = (path, id) => {
     return sendRequest({
         url: path + id,
         method: 'DELETE',
-
+        headers: {
+            'Content-Type': 'application/json',
+        }
     })
 }
 
